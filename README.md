@@ -4,7 +4,7 @@
 <br>
 
 <div align = 'center' justify-content = 'space-around' >
-  <img width="1604" alt=" Design System Platform - Desktop" src="./project/screens/screen1.png">
+  <img width="1604" alt=" Design System" src="./project/screens/screen1.png">
 </div>
 <br>
 <br>
@@ -29,12 +29,12 @@
 
 <div id="theproject">
 <h2> 📓 The Project </h2>
-<p> Design System platform </p>
+<p> Design System </p>
 </div>
 
 <div id="target">
 <h2> 💡 Target </h2>
-Development of an Design System platform (web platform and mobile versions) at Ignite Lab, from Rocketseat
+Development of an Design System at Ignite Lab, from Rocketseat
 </div>
 <br>
 
@@ -263,6 +263,7 @@ The following tools were used in building the project:<br><br>
               }
               </code></pre>
             </li>
+            <li>Add force to npm ci script: .github/workflows/deploy-docs.yml</li>
           </ul>
         </li>
         <li &nbsp;><b>Creating interface with components</b>
