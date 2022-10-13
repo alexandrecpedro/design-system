@@ -4,16 +4,13 @@
 <br>
 
 <div align = 'center' justify-content = 'space-around' >
-  <img width="1604" alt=" Design System" src="./project/screens/screen1.png">
+  <img width="1604" alt=" Design System - platform" src="./public/screens/screen1.png">
 </div>
 <br>
+<div align = 'center' justify-content = 'space-around' >
+  <img width="1604" alt=" Design System - document" src="./public/screens/screen2.png">
+</div>
 <br>
-
-|                                                                                     |                                                                                   |                                                                                        |
-| :---------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------: | :------------------------------------------------------------------------------------: |
-| <img width="1604" alt="Landing Page - Desktop" src="./project/screens/screen2.png"> | <img width="1604" alt="Post an ad - Desktop" src="./project/screens/screen3.png"> |   <img width="1604" alt="Splash Page - Mobile" src="./project/screens/screen4.png">    |
-|   <img width="1604" alt="Home Page - Mobile" src="./project/screens/screen5.png">   |   <img width="1604" alt="Ad Page - Mobile" src="./project/screens/screen6.png">   | <img width="1604" alt="Logged User Page - Mobile" src="./project/screens/screen7.png"> |
-
 <br>
 
 <p></p>
@@ -44,46 +41,35 @@ The following tools were used in building the project:<br><br>
 
 |                      Type                       |           Tools           |            References             |
 | :---------------------------------------------: | :-----------------------: | :-------------------------------: |
-|                       IDE                       |          VS CODE          |  https://code.visualstudio.com/   |
-|              Design Interface Tool              | FIGMA (Prototype - UX/UI) |      https://www.figma.com/       |
-|         Programming Language (Frontend)         |           REACT           |       https://reactjs.org/        |
+|                       IDE                       |          VS CODE          |  https://code.visualstudio.com/    |
+|              Design Interface Tool              | FIGMA (Prototype - UX/UI) |      https://www.figma.com/                 |
+|              Programming Language               |           REACT           |       https://reactjs.org/                 |
 |              Programming Language               |        TYPESCRIPT         |  https://www.typescriptlang.org/  |
-| Open source API development ecosystem (Testing) |        HOPPSCOTCH         |      https://hoppscotch.io/       |
-|     Utility-first CSS Framework (Frontend)      |       TAILWIND CSS        |     https://tailwindcss.com/      |
-|    Tool for transforming CSS with JavaScript    |         POST CSS          |       https://postcss.org/        |
-|      Graphic components (Frontend, Mobile)      |      PHOSPHOR ICONS       |    https://phosphoricons.com/     |
-|     UI Isolated Component Building Library      |         STORYBOOK         |     https://storybook.js.org/     |
-|        Navigation between pages (Mobile)        |     REACT NAVIGATION      |   https://reactnavigation.org/    |
-|               Database (Backend)                |          SQLITE           | https://www.sqlite.org/index.html |
-|  Promise based HTTP client - browser & Node.js  |           AXIOS           |      https://axios-http.com/      |
-|             UI Components for React             |         RADIX-UI          |     https://www.radix-ui.com/     |
-| Node.js and TypeScript ORM (Backend, Database)  |          PRISMA           |      https://www.prisma.io/       |
-|    Tool to build frontend faster (Frontend)     |          VITE.JS          |        https://vitejs.dev/        |
+|           Utility-first CSS Framework            |       TAILWIND CSS        |     https://tailwindcss.com/                 |
+|    Tool for transforming CSS with JavaScript    |         POST CSS          |       https://postcss.org/                 |
+|               Graphic components                |      PHOSPHOR ICONS       |    https://phosphoricons.com/                 |
+|     UI Isolated Component Building Library      |         STORYBOOK         |     https://storybook.js.org/                 |
+|             UI Components for React             |         RADIX-UI          |     https://www.radix-ui.com/                 |
+|          Tool to build frontend faster          |          VITE.JS          |        https://vitejs.dev/                 |
 
 <br>
 
 <div align = 'center'>
-  <h3>Testing</h3>
-  <img width =' 100px ' src="./project/logo/hoppscotch_logo.png" />
-  <br>
-  <h3>Database</h3>
-  <img height =' 100px ' left=' 20px ' src="./project/logo/prisma_logo.png" />
-  <br>
   <h3>IDE</h3>
   <img height =' 100px ' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" />
   <br>
   <h3>UX/UI</h3>
   <img height =' 100px ' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" />
-  <img height =' 100px ' left=' 20px ' src="./project/logo/phosphor-icons_logo.png"/>
-  <img height =' 100px ' left=' 20px ' src="./project/logo/storybook_logo.png" />
+  <img height =' 100px ' left=' 20px ' src="./public/logo/phosphor-icons_logo.png"/>
+  <img height =' 100px ' left=' 20px ' src="./public/logo/storybook_logo.png" />
+  <img height =' 100px ' left=' 20px ' src="./public/logo/radix-ui_logo.png"/>
   <br>
   <h3>Frontend</h3>
   <img width =' 100px ' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
   <img width =' 100px ' left=' 20px ' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" />
-  <img height =' 50px ' left=' 20px ' src="./project/logo/tailwind-css_logo.svg" />
+  <img height =' 50px ' left=' 20px ' src="./public/logo/tailwind-css_logo.svg" />
   <br>
-  <img height =' 100px ' src="./project/logo/vite_logo.svg"/>
-  <img height =' 100px ' left=' 20px ' src="./project/logo/radix-ui_logo.png"/>
+  <img height =' 100px ' src="./public/logo/vite_logo.svg"/>
   <br>
 </div>
 
@@ -264,14 +250,12 @@ The following tools were used in building the project:<br><br>
             <li>Add force to npm ci script: .github/workflows/deploy-docs.yml</li>
           </ul>
         </li>
-        <li &nbsp;><b>Creating interface with components</b>
+        <li &nbsp;><b>Creating interface with components: ./src/App.tsx</b>
           <ul>
-            <li>Install Tailwind CSS, PostCSS and autoprefixer: npm i tailwindcss postcss autoprefixer -D</li>
-            <li>Start Tailwind CSS: npx tailwindcss init -p</li>
-            <li>Customize contents, themes, fonts and plugins with Tailwind: ./tailwind.config.cjs</li>
-            <li>Install VS Code extensions: Tailwind CSS IntelliSense, PostCSS Language Support, MDX</li>
-            <li>Customize the global style: ./src/styles/global.css</li>
-            <li>Customize classes at Tailwind: npm i clsx</li>
+            <li>Transform React logo SVG to a JSX: https://transform.tools</li>
+            <li>Create Logo element: ./src/Logo.tsx</li>
+            <li>Add phosphor icons/li>
+            <li>Customize contents, themes, fonts, forms and plugins</li>
           </ul>
         </li>
         <li &nbsp;><b>Accessibility addon</b>
