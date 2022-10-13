@@ -250,16 +250,14 @@ The following tools were used in building the project:<br><br>
             <li>Settings based on GitHub Actions</li>
             <li>Add the following code at .storybook/main.cjs
               <pre><code>
-              "addons": [
+              module.exports = {
                 ...,
-                '@storybook/addon-a11y'
-              ],
-              ...,
-              viteFinal: (config, { configType }) => {
-                if (configType === 'PRODUCTION') {
-                  config.base = '/design-system/'
+                viteFinal: (config, { configType }) => {
+                  if (configType === 'PRODUCTION') {
+                    config.base = '/design-system/'
+                  }
+                  return config
                 }
-                return config
               }
               </code></pre>
             </li>
@@ -276,7 +274,24 @@ The following tools were used in building the project:<br><br>
             <li>Customize classes at Tailwind: npm i clsx</li>
           </ul>
         </li>
-        <li &nbsp;>Accessibility addon: ./index.html</li>
+        <li &nbsp;><b>Accessibility addon</b>
+          <ul>
+            <li>Install: npm install @storybook/addon-a11y</li>
+            <li>Settings based on GitHub Actions</li>
+            <li>Add the following code at .storybook/main.cjs
+              <pre><code>
+              module.exports = {
+                addons: [
+                  ...,
+                  '@storybook/addon-a11y'
+                ],
+                ...
+              };
+              </code></pre>
+            </li>
+            <li>Add force to npm ci script: .github/workflows/deploy-docs.yml</li>
+          </ul>
+        </li>
         <li &nbsp;>MSW addon: ./tailwind.config.cjs</li>
         <li &nbsp;><b>Storybook</b>
           <ul>

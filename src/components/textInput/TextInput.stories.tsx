@@ -15,10 +15,12 @@ export default {
         ]
     },
     argTypes: {
-        table: {
-            disable: true
+        children: {
+            table: {
+                disable: true,
+            }
         }
-    }
+    },
 } as Meta<TextInputRootProps>
 
 /** VARIATIONS FROM OBJECT **/
