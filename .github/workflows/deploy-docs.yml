@@ -1,0 +1,40 @@
+name: Deploy Storybook
+
+# When it should happen?
+on:
+  push:
+    branches:
+      - main
+
+# What should GitHub do?
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    # Which commands should be executed?
+    steps: 
+      # Downloads updated version
+      - name: Checkout
+        uses: actions/checkout@v3
+      
+      # Installs Node.js at Ubuntu
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      # Installs all dependencies for non-interactive environments (no-entries from terminal)
+      # It refuses any request for user to enter
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      # Builds Storybook
+      - name: Build Storybook
+        run: npm run build-storybook
+
+      # Deploys Storybook
+      - name: Deploy Storybook
+        run: npm run deploy-storybook -- --ci --existing-output-dir=storybook-static
+        env:
+          GH_TOKEN: ${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}
+
