@@ -213,7 +213,7 @@ The following tools were used in building the project:<br><br>
             </li>
             <li>Build Storybook script: npm run build-storybook</li>
             <li>Add storybook-static folder to .gitignore</li>
-            <li><em>Upload project to GitHub</em>
+            <li><b>Upload project to GitHub</b>
               <ul>
                 <li>New repository
                   <ol>
@@ -235,7 +235,7 @@ The following tools were used in building the project:<br><br>
             </li>
           </ul>
         </li>
-        <li &nbsp;>Storybook CI/CD (continuous integration)
+        <li &nbsp;><b>Storybook CI/CD (continuous integration)</b>
           <ul>
             <li>New file: .github/workflows/deploy-docs.yml</li>
             <li>Settings based on GitHub Actions</li>
@@ -343,7 +343,7 @@ The following tools were used in building the project:<br><br>
               Do you wish to save "public" as the worker directory? (Y/n) Y
               </code></pre>
             </li>
-            <li>Add the following code at .storybook/main.cjs
+            <li><em>Add the following code at .storybook/main.cjs</em>
               <pre><code>
               module.exports = {
                 ...,
@@ -354,7 +354,7 @@ The following tools were used in building the project:<br><br>
               };
               </code></pre>
             </li>
-            <li>Initialize MSW and provide the MSW addon decorator globally: .storybook/preview.cjs
+            <li><em>Initialize MSW and provide the MSW addon decorator globally: .storybook/preview.cjs</em>
               <pre><code>
               import { initialize, mswDecorator } from 'msw-storybook-addon';
               // Initialize MSW
@@ -365,7 +365,7 @@ The following tools were used in building the project:<br><br>
               export const decorators = [mswDecorator];
               </code></pre>
             </li>
-            <li>Add the following code at ./src/pages/SignIn.stories.tsx
+            <li><em>Add the following code at ./src/pages/SignIn.stories.tsx</em>
               <pre><code>
               export default {
                 ...,
