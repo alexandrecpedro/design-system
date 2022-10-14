@@ -399,7 +399,7 @@ The following tools were used in building the project:<br><br>
     <li &nbsp;>Set the development environment at you local computer</li>
     <li &nbsp;>Clone the repository
       <ul>
-        <li>git clone https://github.com/alexandrecpedro/eSports</li>
+        <li>git clone https://github.com/alexandrecpedro/design-system</li>
       </ul>
     </li>
     <li &nbsp;>Enter the project directory:
@@ -407,29 +407,25 @@ The following tools were used in building the project:<br><br>
         <li>cd design-system</li>
       </ul>
     </li>
-    <li><b>Testing</b>
+    <li &nbsp;>Install the dependencies
       <ul>
-        <li &nbsp;>Enter the directory
-          <ul>
-            <li>cd design-system</li>
-          </ul>
-        </li>
-        <li &nbsp;>Install the dependencies
-          <ul>
-            <li>npm install</li>
-          </ul>
-        </li>
-        <li &nbsp;>Run Project
-          <ul>
-            <li>npm run dev</li>
-          </ul>
-        </li>
-        <li &nbsp;>Storybook
-          <ul>
-            <li>Setup: npx sb init --builder @storybook/builder-vite --use-npm</li>
-            <li>Run: npm run storybook</li>
-          </ul>
-        </li>
+        <li>npm install</li>
+      </ul>
+    </li>
+    <li &nbsp;>Run Project
+      <ul>
+        <li>npm run dev</li>
+      </ul>
+    </li>
+    <li &nbsp;>Storybook
+      <ul>
+        <li>Setup: npx sb init --builder @storybook/builder-vite --use-npm</li>
+        <li>Run: npm run storybook</li>
+      </ul>
+    </li>
+    <li &nbsp;>Run automated tests
+      <ul>
+        <li>Run: npm run test-storybook</li>
       </ul>
     </li>
   </ol>
