@@ -72,9 +72,9 @@ The following tools were used in building the project:<br><br>
   <h3>Frontend</h3>
   <img width =' 100px ' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
   <img width =' 100px ' left=' 20px ' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" />
-  <img height =' 50px ' left=' 20px ' src="./public/logo/tailwind-css_logo.svg" />
-  <br>
   <img height =' 100px ' src="./public/logo/vite_logo.svg"/>
+  <br>
+  <img height =' 50px ' left=' 20px ' src="./public/logo/tailwind-css_logo.svg" />
   <br>
 </div>
 
@@ -303,7 +303,8 @@ The following tools were used in building the project:<br><br>
               <ul>
                 <li>Install dependency
                   <pre><code>
-                  npm install @storybook/addon-interactions @storybook/jest @storybook/testing-library @storybook/test-runner -D
+                  npm install @storybook/addon-interactions @storybook/jest 
+                  @storybook/testing-library @storybook/test-runner -D
                   </code></pre>
                 </li>
                 <li>Add the following code at .storybook/main.cjs
@@ -337,12 +338,10 @@ The following tools were used in building the project:<br><br>
           <ul>
             <li>Install: npm install msw msw-storybook-addon -D</li>
             <li><em>Generate service worker for MSW in your public folder</em>
-              <ul>
-                <pre><code>
-                npx msw init public/
-                Do you wish to save "public" as the worker directory? (Y/n) Y
-                </code></pre>
-              </ul>
+              <pre><code>
+              npx msw init public/
+              Do you wish to save "public" as the worker directory? (Y/n) Y
+              </code></pre>
             </li>
             <li>Add the following code at .storybook/main.cjs
               <pre><code>
