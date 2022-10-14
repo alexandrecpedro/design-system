@@ -51,18 +51,23 @@ The following tools were used in building the project:<br><br>
 |     UI Isolated Component Building Library      |         STORYBOOK         |     https://storybook.js.org/                 |
 |             UI Components for React             |         RADIX-UI          |     https://www.radix-ui.com/                 |
 |          Tool to build frontend faster          |          VITE.JS          |        https://vitejs.dev/                 |
+| Seamless API mocking library for browser and Node  |        MSW.JS          |        https://mswjs.io/                  |
 
 <br>
 
 <div align = 'center'>
+  <h3>Backend</h3>
+  <img height =' 100px ' src="./public/logo/mswjs_logo.png" />
+  <br>
   <h3>IDE</h3>
   <img height =' 100px ' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" />
   <br>
   <h3>UX/UI</h3>
   <img height =' 100px ' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" />
   <img height =' 100px ' left=' 20px ' src="./public/logo/phosphor-icons_logo.png"/>
-  <img height =' 100px ' left=' 20px ' src="./public/logo/storybook_logo.png" />
   <img height =' 100px ' left=' 20px ' src="./public/logo/radix-ui_logo.png"/>
+  <br>
+  <img height =' 100px ' src="./public/logo/storybook_logo.png" />
   <br>
   <h3>Frontend</h3>
   <img width =' 100px ' src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" />
@@ -273,14 +278,112 @@ The following tools were used in building the project:<br><br>
               };
               </code></pre>
             </li>
-            <li>Add force to npm ci script: .github/workflows/deploy-docs.yml</li>
           </ul>
         </li>
-        <li &nbsp;>MSW addon: ./tailwind.config.cjs</li>
         <li &nbsp;><b>Storybook</b>
           <ul>
             <li>Setup: npx sb init --builder @storybook/builder-vite --use-npm</li>
             <li>Run: npm run storybook</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li &nbsp;>Part 4 - Automated Tests and API mock<br/>
+      <ul &nbsp;>
+        <li &nbsp;><b>SignIn page</b>
+          <ul>
+            <li>Create a page: ./src/pages/SignIn.tsx</li>
+            <li>Set function to simulate login</li>
+          </ul>
+        </li>
+        <li &nbsp;><b>Tests for SignIn stories</b> 
+          <ul>
+            <li>Storybook for SignIn page: ./src/pages/SignIn.stories.tsx</li>
+            <li><em>Interactions Addon</em>
+              <ul>
+                <li>Install dependency
+                  <pre><code>
+                  npm install @storybook/addon-interactions @storybook/jest @storybook/testing-library @storybook/test-runner -D
+                  </code></pre>
+                </li>
+                <li>Add the following code at .storybook/main.cjs
+                  <pre><code>
+                  module.exports = {
+                    addons: [
+                      ...,
+                      '@storybook/addon-interactions'
+                    ],
+                    ...,
+                    features: {
+                      ...,
+                      interactionsDebugger: true,
+                    },
+                    ...
+                  };
+                  </code></pre>
+                </li>
+              </ul>
+            </li>
+            <li>Setting automated tests on StoryObj: function play()</li>
+          </ul>
+        </li>
+        <li &nbsp;><b>API with Axios</b>
+          <ul>
+            <li>Install Axios: npm i axios</li>
+            <li>Use on SignIn page: ./src/pages/SignIn.tsx</li>
+          </ul>
+        </li>
+        <li &nbsp;><b>MSW (Mock Service Worker) addon</b>
+          <ul>
+            <li>Install: npm install msw msw-storybook-addon -D</li>
+            <li><em>Generate service worker for MSW in your public folder</em>
+              <ul>
+                <pre><code>
+                npx msw init public/
+                Do you wish to save "public" as the worker directory? (Y/n) Y
+                </code></pre>
+              </ul>
+            </li>
+            <li>Add the following code at .storybook/main.cjs
+              <pre><code>
+              module.exports = {
+                ...,
+                "staticDirs": [
+                  "../public"
+                ],
+                ...
+              };
+              </code></pre>
+            </li>
+            <li>Initialize MSW and provide the MSW addon decorator globally: .storybook/preview.cjs
+              <pre><code>
+              import { initialize, mswDecorator } from 'msw-storybook-addon';
+              // Initialize MSW
+              initialize({
+                onUnhandledRequest: 'bypass'
+              });
+              // Provide the MSW addon decorator globally
+              export const decorators = [mswDecorator];
+              </code></pre>
+            </li>
+            <li>Add the following code at ./src/pages/SignIn.stories.tsx
+              <pre><code>
+              export default {
+                ...,
+                parameters: {
+                  msw: {
+                    handlers: [
+                      rest.post('/sessions', (req, res, ctx) => {
+                        return res(ctx.json({
+                          message: 'Successfully logged in!'
+                        }))
+                      })
+                    ],
+                  },
+                }
+              } as Meta
+              </code></pre>
+            </li>
           </ul>
         </li>
       </ul>
